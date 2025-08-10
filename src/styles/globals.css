@@ -589,7 +589,6 @@ a {
   position: absolute;
   width: 250px;
   height: 250px;
-  background-image: url('/assets/dotted-pattern.png');
   background-repeat: no-repeat;
   background-size: contain;
   opacity: 0.5;

@@ -1,0 +1,886 @@
+/* ======================================== */
+/*  1. CSS VARIABLES (FLUID DESIGN SYSTEM)  */
+/* ======================================== */
+:root {
+  --font-base-size: 1rem;
+  --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.94rem);
+  --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.25rem);
+  --font-size-lg: clamp(1.25rem, 0.61vw + 1.1rem, 1.67rem);
+  --font-size-xl: clamp(1.56rem, 1vw + 1.31rem, 2.22rem);
+  --font-size-xxl: clamp(1.95rem, 1.56vw + 1.56rem, 2.96rem);
+  --font-size-xxxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.95rem);
+
+  --space-unit: calc(1vw + 0.5rem);
+  --space-xs: calc(var(--space-unit) * 0.25);
+  --space-sm: calc(var(--space-unit) * 0.5);
+  --space-md: calc(var(--space-unit) * 1);
+  --space-lg: calc(var(--space-unit) * 1.5);
+  --space-xl: calc(var(--space-unit) * 2);
+}
+
+/* ======================================== */
+/*  2. GENERAL BODY & ELEMENT STYLES        */
+/* ======================================== */
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: var(--font-size-base);
+  background-color: #ffffff; /* Default background is white */
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0; /* Simple reset for headings */
+}
+
+p {
+  line-height: 1.6;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ======================================== */
+/*  3. REUSABLE CONTAINER CLASS             */
+/* ======================================== */
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex; /* Added for header layout */
+  justify-content: space-between; /* Added for header layout */
+  align-items: center; /* Added for header layout */
+}
+
+/* ======================================== */
+/*  4. HEADER STYLES                        */
+/* ======================================== */
+/* ======================================== */
+/*  4. HEADER STYLES (FIGMA-PERFECT)        */
+/* ======================================== */
+
+
+
+
+.header .container {
+  /* Ensure the container inside the header works correctly */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  object-fit: contain;
+}
+
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--space-xl); /* Increase gap for more spacing */
+}
+
+.navigation a {
+  text-decoration: none;
+  /* NEW: Text color is now dark to be visible on a white background */
+  color: #333333; 
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  letter-spacing: 1px;
+  padding-bottom: 0.5rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Underline effect on hover */
+.navigation a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #003e17; /* Dark green accent */
+  transition: width 0.3s ease-in-out;
+}
+
+.navigation a:hover::after {
+  width: 100%;
+}
+
+/* ======================================== */
+/*  4 & 5. HEADER & HERO (DEFINITIVE FINAL) */
+/* ======================================== */
+
+/* --- The Hero Section (The Base Layer) --- */
+.hero-section {
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  position: relative; 
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+
+/* --- The Header (The Full-Width Floating Bar) --- */
+.header {
+  position: absolute;
+  
+  /* Pushes the header down from the top edge */
+  top: 2rem; 
+  
+  /* Ensures it spans the full width */
+  left: 0;
+  width: 100%;
+  
+  /* No horizontal centering or width constraints on the bar itself */
+  
+  background-color: rgb(255, 255, 255);; /* The bar itself is invisible */
+  padding: 0; /* No padding on the main header bar */
+  z-index: 10;
+}
+
+/* THIS IS THE KEY: We style the .container INSIDE the header */
+.header .container {
+  /* This creates the white bar effect */
+  background-color: #ffffff; 
+  
+  /* This constrains the content and centers it, leaving the bar full-width */
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto; /* Centers the container */
+  
+  /* Add styling to make it look like a nice floating bar */
+  
+  
+  /* Padding for the content inside the white bar */
+  padding: 1rem 2rem;
+  
+  /* Keep the logo and nav links spaced out */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Header Links (No changes needed here) */
+.navigation a {
+  color: #333333;
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  letter-spacing: 1px;
+  padding-bottom: 0.5rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navigation a:hover { color: #003e17; }
+.navigation a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #003e17;
+  transition: width 0.3s ease-in-out;
+}
+.navigation a:hover::after { width: 100%; }
+
+/* Existing header styles remain unchanged for desktop */
+
+/* Mobile-Only Fixed Header */
+@media (max-width: 768px) {
+  .header {
+    position: fixed; /* Fixes the header to the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff; /* White background */
+    z-index: 1000; /* Ensure it stays above everything */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+  }
+
+  .header .container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navigation ul {
+    gap: 1rem; /* Reduce gap for smaller screens */
+  }
+
+  .navigation a {
+    font-size: 0.9rem; /* Slightly smaller text */
+  }
+
+  /* Push down hero-section so it's not hidden under fixed header */
+  .hero-section {
+    padding-top: 70px; /* Adjust depending on header height */
+  }
+}
+
+/* --- Hero Section Text (No changes needed here) --- */
+.hero-content {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 var(--space-lg) 5rem var(--space-lg);
+  text-align: left;
+}
+.hero-title {
+  
+  font-weight: 600;
+  text-transform: uppercase;
+  
+  line-height: 1.1;
+  text-align: center;
+  font-size: 2.95rem;
+}
+.hero-subtitle {
+  font-size: var(--font-size-lg);
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* MObile responsive code 
+
+/* ======================================== */
+/*  11. RESPONSIVENESS OPTIMIZATIONS        */
+/* ======================================== */
+
+/* --- For Tablets & Small Laptops (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+  /* Reduce font sizes for better readability */
+  .hero-title {
+    font-size: var(--font-size-xxl);
+  }
+  .footer-title {
+    font-size: var(--font-size-xl);
+  }
+  .reach-category-title {
+    font-size: var(--font-size-lg);
+  }
+  .reach-points-list li {
+    font-size: var(--font-size-base);
+  }
+
+  /* Make the FAQ grid stack into one column sooner */
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* --- For Mobile Devices (max-width: 768px) --- */
+@media (max-width: 768px) {
+  /* --- Mobile Header & Hamburger Menu --- */
+  .header .container {
+    padding: 0.5rem 1rem; /* Smaller padding on mobile */
+  }
+
+  .logo {
+    width: 50px; /* Smaller logo on mobile */
+    height: auto;
+  }
+
+  /* Style the mobile navigation container */
+  .navigation {
+    position: fixed;
+    inset: 0 0 0 30%; /* Covers 70% of the screen from the right */
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    padding: 5rem 2rem;
+    
+    /* Hide it off-screen by default */
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navigation.nav-open {
+    transform: translateX(0); /* Bring it on-screen when open */
+  }
+
+  .navigation ul {
+    flex-direction: column; /* Stack nav links vertically */
+    gap: 2.5rem;
+    text-align: center;
+  }
+  
+  .navigation a {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+  }
+
+  /* --- Hamburger Button Styling --- */
+  .nav-toggle {
+    display: block; /* Show the button on mobile */
+    position: absolute;
+    z-index: 9999;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .hamburger {
+    display: block;
+    position: relative;
+    width: 2em;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 2em;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .hamburger::before { top: -8px; }
+  .hamburger::after { bottom: -8px; }
+
+  /* Animate hamburger to an 'X' when open */
+  .nav-open .hamburger {
+    transform: rotate(45deg);
+  }
+  .nav-open .hamburger::before {
+    transform: rotate(90deg) translate(-8px);
+  }
+  .nav-open .hamburger::after {
+    opacity: 0;
+  }
+
+
+  /* --- General Mobile Font & Layout Adjustments --- */
+  .hero-section {
+    height: 90vh; /* Adjust height */
+  }
+  .hero-title {
+    font-size: var(--font-size-xl);
+  }
+  .hero-content {
+    padding-bottom: 3rem;
+  }
+
+  .intro-section,
+  .reach-section,
+  .offerings-section,
+  .faq-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .section-title, .reach-title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-lg);
+  }
+  
+  .reach-text {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .footer-container, .footer-contact {
+    text-align: center;
+  }
+}
+
+/* Hide hamburger button on desktop */
+@media (min-width: 769px) {
+  .nav-toggle {
+    display: none;
+  }
+}
+/* === MODIFIED STYLES END HERE === */
+/* ======================================== */
+/*  6. INTRO SECTION STYLES                 */
+/* ======================================== */
+
+.intro-section {
+  padding-top: var(--space-xl); /* Add space above and below the section */
+  padding-bottom: var(--space-xl);
+  background-color: #ffffff; /* White background for this section */
+}
+
+/* We need a specific container class for this section to use flexbox */
+.intro-container {
+  display: flex;
+  align-items: center; /* Vertically align items in the middle */
+  gap: var(--space-xl); /* Create a gap between the text and the image */
+  flex-wrap: wrap; /* Allows columns to stack on smaller screens */
+}
+
+.intro-text {
+  flex: 1; /* Allows the text column to grow and shrink */
+  min-width: 300px; /* Prevents the text from getting too squished */
+}
+
+.intro-image-wrapper {
+  flex: 1; /* Allows the image column to grow and shrink */
+  min-width: 300px;
+}
+
+.intro-title {
+  font-size: var(--font-size-xxl);
+  color: black;
+  margin-bottom: var(--space-md);
+  font-weight: 600;
+}
+
+.intro-description {
+  color: black;
+  margin-bottom: var(--space-md);
+}
+
+.intro-button {
+  display: inline-block; /* Allows us to style it like a button */
+  background-color: #003e17; /* Green background from the design */
+  color: #ffffff;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: 50px; /* Creates the pill shape */
+  font-weight: 500;
+  margin-top: var(--space-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro-button:hover {
+  transform: translateY(-3px); /* Lifts the button slightly on hover */
+  box-shadow: 0 4px 15px rgba(57, 56, 56, 0.15);
+}
+
+.intro-image {
+  width: 100%; /* Makes the image take the full width of its container */
+  height: auto; /* Maintains the aspect ratio */
+  border-radius: 24px; /* The rounded corners from the design */
+  object-fit: cover;
+}
+/* ======================================== */
+/*  7. OFFERINGS SECTION STYLES             */
+/* ======================================== */
+
+/* ======================================== */
+/*  7. OFFERINGS SECTION STYLES (CORRECTED) */
+/* ======================================== */
+
+.offerings-section {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  background-color: white; 
+  text-align: center;
+}
+
+.offerings-container {
+  display: block;
+}
+
+.section-title {
+  font-size: var(--font-size-xxl);
+  color: #003e17;
+  margin-bottom: var(--space-xl); /* Increased space below title */
+  font-weight: 600;
+}
+
+.offerings-grid {
+  display: grid;
+  /* This now creates 3 equal-width columns on large screens */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  text-align: left; /* Reset text alignment for the items */
+}
+
+.offering-item {
+  background-color: #ffffff;
+  border-radius: 16px; /* Apply the radius to the whole card */
+  overflow: hidden; /* This is key to making the image conform to the radius */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex; /* We use flexbox to structure the card */
+  flex-direction: column; /* Stack image and title vertically */
+}
+
+.offering-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.offering-image-wrapper {
+  width: 100%;
+  height: 220px; /* Adjust height as needed */
+  position: relative;
+}
+
+.offering-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.offering-title {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: #333;
+  padding: var(--space-md);
+  /* This ensures the title area grows if needed but doesn't shrink */
+  flex-grow: 1;
+  display: flex;
+  align-items: center; /* Vertically center the text if it's short */
+  justify-content: center; /* Horizontally center the text in the box */
+}
+
+.offerings-button-wrapper {
+  margin-top: var(--space-lg);
+}
+
+/* ======================================== */
+/*  8. REACH SECTION STYLES (DEFINITIVE)    */
+/* ======================================== */
+
+.reach-section {
+  padding: 5rem var(--space-lg);
+  background-color: #f7f7f7;
+  position: relative;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Dotted Background Patterns */
+.reach-section::before,
+.reach-section::after {
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background-image: url('/assets/dotted-pattern.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.5;
+  z-index: 0;
+}
+.reach-section::before { top: 20px; left: 20px; }
+.reach-section::after { bottom: 20px; right: 20px; }
+
+
+.reach-container {
+  display: flex;
+  align-items: center; /* This is key for vertical alignment */
+  gap: 3rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+/* === THIS IS THE KEY FIX === */
+.reach-image-wrapper,
+.reach-text {
+  flex: 1; /* Make both columns take up exactly 50% of the space */
+  min-width: 350px; /* For responsive stacking */
+}
+
+.reach-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the title and image within the column */
+}
+
+.reach-image {
+  /* The image will take up 100% of its container's width, but no more */
+  width: 120%;
+   /* Prevents the image from getting too large on huge screens */
+  height: 90%; /* Maintain aspect ratio */
+  padding-bottom: 80px;
+}
+
+.reach-text {
+  color: #003e17;
+}
+/* === END OF KEY FIX === */
+
+
+.reach-title {
+  text-align: center;
+  margin-bottom: var(--space-md);
+  color: #003e17;
+  font-size: var(--font-size-xxl);
+  font-weight: 600;
+}
+
+.reach-category {
+  padding-bottom: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  border-bottom: 2px dotted #c5c5c5;
+}
+
+.reach-category:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.reach-category-title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: var(--space-md);
+}
+
+.reach-points-list {
+  list-style-type: disc;
+  padding-left: 15px;
+}
+
+.reach-points-list li {
+  padding-bottom: var(--space-sm);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  line-height: 1.7;
+}
+/* ======================================== */
+/*  9. FAQ SECTION STYLES (FIGMA-PERFECT)   */
+/* ======================================== */
+
+.faq-section {
+  padding: 5rem var(--space-lg);
+  background-color: #ffffff;
+}
+
+.faq-container {
+  display: block;
+  max-width: 1200px; /* Wider container for two columns */
+  margin: 0 auto;
+}
+
+/* === Title with Decorative Lines === */
+.faq-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.faq-title-wrapper .line {
+  height: 1px;
+  width: 100%;
+  background-color: #003e17;
+}
+
+.faq-main-title {
+  /* This creates the rounded-border effect around the title */
+  border: 1px solid #003e17;
+  border-radius: 50px;
+  padding: 0.75rem 2.5rem;
+  white-space: nowrap; /* Prevents title from breaking into two lines */
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+}
+
+/* === The Two-Column Grid === */
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 1.5rem; /* Gap between the columns and rows */
+}
+
+/* On smaller screens, stack to one column */
+@media (max-width: 900px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === Styling for Each Question Box === */
+.faq-item {
+  /* The border now goes around the entire item */
+  border: 1px solid #003e17;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-base); /* Adjusted for better fit */
+  font-weight: 500;
+  color: #003e17;
+  font-family: inherit;
+  text-align: left;
+}
+
+.faq-arrow {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  color: #003e17; /* Green arrow */
+}
+
+.faq-arrow.open {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+  /* Add padding here that only applies when open */
+  padding: 0 1.5rem;
+}
+
+.faq-answer.open {
+  max-height: 300px;
+  /* Add padding when the answer is visible */
+  padding: 0 1.5rem 1rem 1.5rem;
+  border-top: 1px solid #003e17; /* Separator line */
+}
+
+.faq-answer p {
+  color: #003e17;
+  line-height: 1.7;
+  padding: 0; /* Remove padding from the p tag itself */
+}
+/* ======================================== */
+/*  10. FOOTER STYLES (FIGMA-PERFECT)       */
+/* ======================================== */
+
+.footer-section {
+  background-color: #003e17;
+  color: #ffffff;
+  padding: 4rem var(--space-xl);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  /* Align columns to the top */
+  align-items: flex-start; 
+  flex-wrap: wrap;
+  gap: 32rem;
+}
+
+.footer-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.footer-contact {
+  flex: 1;
+  min-width: 300px;
+  text-align: left; /* Text is left-aligned in its column */
+}
+
+.footer-title {
+  font-size: var(--font-size-xl);
+  font-weight: 400; /* Medium weight */
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.footer-contact p {
+  font-size: var(--font-size-lg);
+  margin-bottom: 1rem; /* More space between lines */
+  line-height: 1;
+  font-weight: 400; /* Regular weight for the value */
+}
+
+/* Style for the labels like "EMAIL:", "LOCATION:" */
+.contact-label {
+  font-weight: 600; /* Bold weight */
+  margin-right: 0.75rem; /* Space between label and value */
+}
+
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 2rem; /* Smaller gap for stacked items */
+    align-items: flex-start; /* Align left instead of spread */
+  }
+
+  .footer-content,
+  .footer-contact {
+    min-width: 100%; /* Take full width on mobile */
+    text-align: left;
+  }
+
+  .footer-title {
+    font-size: 1.2rem; /* Slightly smaller for mobile */
+  }
+
+  .footer-contact p {
+    font-size: 1rem; /* Reduce text size for smaller screens */
+    line-height: 1.4;
+  }
+}
+
+.footer-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.footer-contact {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.footer-title {
+  font-size: var(--font-size-xl);
+  font-weight: 400;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.footer-contact p {
+  font-size: var(--font-size-lg);
+  margin-bottom: 1rem;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.contact-label {
+  font-weight: 600;
+  margin-right: 0.75rem;
+}

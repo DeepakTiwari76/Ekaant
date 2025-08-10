@@ -1,0 +1,85 @@
+{
+"header": {
+"logoUrl": "/assets/EKAANT LOGO 1.png",
+"navLinks": [
+{ "title": "HOME", "href": "/" },
+{ "title": "AMENITIES", "href": "#amenities" },
+{ "title": "PHOTO GALLERY", "href": "#gallery" },
+{ "title": "CONTACT US", "href": "#contact" }
+]
+},
+"hero": {
+"backgroundImageUrl": "/assets/landscape1.png", 
+"title": "WELCOME TO EKAANT—AGRO TOURISM RETREAT NEAR BOR TIGER RESERVE, MAHARASHTRA",
+"subtitle": "A Sustainable Rest & Full-Fillness Wellness"
+},
+"intro": {
+"title": "Ekaant (एकांत)",
+"description": [
+"Meaning Solitude In Sanskrit — Was Born From A Deep Desire To Craft A Space Close To Nature, Where People Could Escape The Chaos Of Everyday Life And Find Tranquility. Ekaant Is An Agro-Tourism Farmstay Promoting Farm-To-Table Experiences, Sustainable Living, Mindful Travel, And Authentic Rural Maharashtrian Culture. The Property Is A Blend Of Modern Amenities, Rustic Charm, Warm Traditional Hospitality, And The Gentle Hum Of Wilderness.",
+"So Whether You Are A Solo Traveler On A Spiritual Quest, A Couple Seeking A Soulful Escape, Or A Family Looking For A Digital Detox In Nature's Lap, The Team Of Ekaant Welcomes You With Open Arms And A Calm Heart."
+],
+"button": {
+"text": "Explore More",
+"href": "/explore"
+},
+"imageUrl": "/assets/mask group.jpg"
+},
+"offerings": {
+"title": "WHAT WE OFFER",
+"items": [
+{ "title": "Boutique Farm Stay", "imageUrl": "/assets/3.png" },
+{ "title": "Agro-Tourism Activities", "imageUrl": "/assets/2.png" },
+{ "title": "Forest & Wildlife Encounters", "imageUrl": "/assets/1.png" },
+{ "title": "Stargazing Nights", "imageUrl": "/assets/6.png" },
+{ "title": "Bonfire Evenings", "imageUrl": "/assets/4.png" },
+{ "title": "Digital Detox & Wellness", "imageUrl": "/assets/5.png" }
+],
+"button": {
+"text": "Book Now",
+"href": "/booking"
+}
+},
+"reach": {
+"title": "HOW TO REACH EKAANT",
+"mapImageUrl": "/assets/Traced Image.png",
+"sections": [
+{
+"title": "By Road",
+"points": ["80 Km From Nagpur", "40 Km From Wardha", "Located On NH-361 And Local Village Roads", "Ample Parking Available At The Property"]
+},
+{
+"title": "By Train",
+"points": ["Nearest Railway Station: Seloo (10 Km), Wardha Jn. (40 Km)", "Taxis And Local Autos Available From Stations"]
+},
+{
+"title": "By Air",
+"points": ["Nearest Airport: Nagpur Dr. Babasaheb Ambedkar International Airport (Approx. 80 Km)", "Car Rentals Or Private Taxis Available"]
+}
+]
+},
+"faq": {
+"title": "FREQUENTLY ASKED QUESTIONS (FAQs)",
+"items": [
+{ "question": "Is The Ekaant Child-Friendly?", "answer": "Yes, children love the open spaces, animals, and local meals. We also have kid-safe areas and swings." },
+{ "question": "Is There Mobile Network Or Internet?", "answer": "Mobile network can be patchy. We encourage a digital detox, but limited Wi-Fi is available in common areas." },
+{ "question": "Can We Spot Tigers Or Wildlife Here?", "answer": "Bor Tiger Reserve is known for its tiger sightings. While we cannot guarantee sightings, safaris can be arranged. And wildlife often visits the nearby buffer zones." },
+{ "question": "Is Food Included In The Stay?", "answer": "Yes, we offer delicious home-style Maharashtrian meals made with locally sourced organic ingredients." },
+{ "question": "Do You Allow Pets?", "answer": "We are a pet-friendly property. We just ask that pets are kept on leash outside the rooms for their safety." },
+{ "question": "What Is The Best Time To Visit?", "answer": "October to March is ideal, with pleasant weather. The monsoon (July to September) makes the landscape lush and beautiful, too." }
+]
+},
+"footer": {
+    "title": [
+      "WE'D LOVE TO HELP YOU", 
+      "PLAN YOUR PEACEFUL", 
+      "ESCAPE."
+    ],
+    "contact": {
+      "phone": "+91 9988776655",
+      "email": "EKANT@NEAVE.TECH",
+      "instagram": "EKANT",
+      "location": "NEAR BOR TIGER RESERVE, WARDHA, MAHARASHTRA"
+    }
+  }
+}

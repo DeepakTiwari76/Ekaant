@@ -1,0 +1,13 @@
+:root{
+  --min-vw: 320;
+  --max-vw: 1440;
+  --min-font: 14;
+  --max-font: 20;
+}
+
+/* fluid base font-size between min and max */
+html {
+  font-size: calc(
+    var(--min-font)px + (var(--max-font) - var(--min-font)) * ((100vw - var(--min-vw)px) / (var(--max-vw) - var(--min-vw)))
+  );
+}

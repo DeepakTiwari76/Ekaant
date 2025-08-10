@@ -206,25 +206,24 @@ a {
 
 /* Mobile-Only Fixed Header */
 @media (max-width: 768px) {
-  .header {
-    position: fixed; /* Fixes the header to the top */
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #ffffff; /* White background */
-    z-index: 1000; /* Ensure it stays above everything */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
-  }
+.header {
+  background-color: #ffffff;
+  /* REMOVED: No horizontal padding on the bar itself */
+  padding: 0.75rem 0; /* ONLY vertical padding */
+  border-bottom: 1px solid #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-  .header .container {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: 0.75rem 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* ADDED: The padding now goes here, inside the header bar */
+  padding: 0 1.5rem;
+}
 
   .navigation ul {
     gap: 1rem; /* Reduce gap for smaller screens */
@@ -702,7 +701,7 @@ a {
   /* This creates the rounded-border effect around the title */
   border: 1px solid #003e17;
   border-radius: 50px;
-  padding: 0.75rem 2.5rem;
+  padding: 0.75rem 2rem;
   white-space: nowrap; /* Prevents title from breaking into two lines */
   margin: 0;
   font-size: var(--font-size-lg);

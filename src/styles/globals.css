@@ -299,7 +299,7 @@ a {
 @media (max-width: 768px) {
   /* --- Mobile Header & Hamburger Menu --- */
   .header .container {
-    padding: 0.5rem 1rem; /* Smaller padding on mobile */
+    padding: 0.5rem 5rem; /* Smaller padding on mobile */
   }
 
   .logo {
@@ -342,16 +342,13 @@ a {
 
   /* --- Hamburger Button Styling --- */
   .nav-toggle {
-    display: block; /* Show the button on mobile */
-    position: absolute;
-    z-index: 9999;
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-    right: 1.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+  display: block;
+  background: transparent;
+  border: 0;
+  padding: 0.5em; /* Gives it a larger clickable area */
+  cursor: pointer;
+  /* DELETED: All the 'position: absolute' code is gone */
+}
 
   .hamburger {
     display: block;
